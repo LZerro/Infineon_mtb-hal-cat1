@@ -133,3 +133,4 @@ if GetDepend(['SOC_XMC7200D_E272K8384AA']):
     path += [cwd + '/COMPONENT_CAT1C/include/triggers']
 
 group = DefineGroup('Libraries', src, depend=[''], CPPPATH=path)
+Return('group')
