@@ -52,6 +52,10 @@ if GetDepend(['SOC_XMC7200D_E272K8384AA']):
     src += ['COMPONENT_CAT1C/source/triggers/cyhal_triggers_xmc7200.c']
     src += ['COMPONENT_CAT1C/source/pin_packages/cyhal_xmc7200_272_bga.c']
 
+if GetDepend(['SOC_XMC7100D_F144K4160AA']):
+    src += ['COMPONENT_CAT1C/source/triggers/cyhal_triggers_xmc7100.c']
+    src += ['COMPONENT_CAT1C/source/pin_packages/cyhal_xmc7100_144_teqfp.c']
+
 if GetDepend(['RT_USING_SERIAL']):
     src += ['source/cyhal_uart.c']
     src += ['source/cyhal_dma.c']
@@ -132,5 +136,9 @@ if GetDepend(['SOC_XMC7200D_E272K8384AA']):
     path += [cwd + '/COMPONENT_CAT1C/include/pin_packages']
     path += [cwd + '/COMPONENT_CAT1C/include/triggers']
 
+if GetDepend(['SOC_XMC7100D_F144K4160AA']):
+    path += [cwd + '/COMPONENT_CAT1C/include']
+    path += [cwd + '/COMPONENT_CAT1C/include/pin_packages']
+    path += [cwd + '/COMPONENT_CAT1C/include/triggers']
 group = DefineGroup('Libraries', src, depend=[''], CPPPATH=path)
 Return('group')
